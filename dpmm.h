@@ -235,15 +235,7 @@ double Dpmm::normpdfln(const veca& x, const vecb& m, const mat& cov) {
   double out = -log(cov.diagonal().prod()) -
                0.5 * (x.rows() * log2pi + (tmp.transpose() * tmp));
   if (out != out) {  // detects whether the output is NaN
-    mexPrintf("\n\tnormpdfln - ERROR -");
-    mexPrintf("\n\tsample = ");
-    printmat(x);
-    mexPrintf("\n\tmean = ");
-    printmat(m);
-    mexPrintf("\n\tcov = ");
-    printmat(cov);
-    mexPrintf("\n\tcov-T*(x-m) = ");
-    printmat(tmp);
+    throw std::out_of_range("Non-real value in normpdfln.");
   }
   return out;
 }  // END: double Dpmm::normpdfln(const veca& x, const vecb& m, const mat& cov)
