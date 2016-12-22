@@ -27,7 +27,7 @@ allcov = cov(data);
     params(1) = unhideObservations(params(1), 1, data);
     params(1) = ParamsConvert(params(1));
 
-    params = ParamsConvert(gibbsSampling(ParamsConvert(params(1)),data',num_its));
+    params = ParamsConvert(dpmm_matlab(ParamsConvert(params(1)),data',num_its));
 
 end
 

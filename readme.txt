@@ -10,11 +10,11 @@ The demo code uses
 * a function for plotting of Gaussian ellipsoids by Gautam Vallabha (in /misc)
 
 Compilation (if Eigen is in the folder Eigen):
-mex gibbsSampling.cpp -IEigen
+mex dpmm_matlab.cpp -largeArrayDims -IEigen
 
 For a demo, run simmain.
 
-Tested on Win 10 x64.
+Tested on Win 10 x64 with Visual Studio 2015 compiler.
 
 Copyright (C) 2016 Maxim Dolgov: m<dot>dolgov<at>web<dot>de
 No warranty, no commercial use.
